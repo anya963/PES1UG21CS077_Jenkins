@@ -5,27 +5,25 @@ pipeline {
         stage('Build') {
             steps {
                 // Compile the .cpp file using the build script
-                build 'PES1UG21CS077-1'
-                sh 'g++ PES1UG21CS077_Jenkins/main/new_file.cpp -o output'
+                sh './build.sh'
             }
         }
         stage('Test') {
             steps {
                 // Print output of the .cpp file using a shell script
-                sh './output'
+                sh './YOUR_SRN-1'
             }
         }
         stage('Deploy') {
             steps {
                 // Commands to deploy the application
-              echo 'deploy'
             }
         }
     }
 
     post {
         failure {
-            error 'pipeline failed'
+            echo 'pipeline failed'
         }
     }
 }
