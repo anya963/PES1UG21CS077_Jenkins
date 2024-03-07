@@ -1,0 +1,30 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                // Compile the .cpp file using the build script
+                sh './build.sh'
+            }
+        }
+        stage('Test') {
+            steps {
+                // Print output of the .cpp file using a shell script
+                sh './YOUR_SRN-1'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                // Commands to deploy the application
+                echo 'Deploying the application...'
+            }
+        }
+    }
+
+    post {
+        failure {
+            echo 'Pipeline failed'
+        }
+    }
+}
