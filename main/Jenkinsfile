@@ -11,7 +11,7 @@ pipeline {
         stage('Test') {
             steps {
                 // Print output of the .cpp file using a shell script
-                sh './YOUR_SRN-1'
+                sh './PES1UG21CS077-1'
             }
         }
         stage('Deploy') {
